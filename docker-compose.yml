@@ -1,0 +1,46 @@
+version: "3.8"
+services:
+    redis:
+        image: redis
+        restart: always
+    mongo:
+        image: mongo
+        restart: always
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME}
+            MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+            MONGO_INITDB_DATABASE: wearmerge
+        volumes:
+            - "./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro"
+            - "db:/data/db"
+    backend:
+        build: ./backend
+        restart: always
+        environment:
+            MONGO_USERNAME: ${MONGO_USERNAME}
+            MONGO_PASSWORD: ${MONGO_PASSWORD}
+            SENDGRID_API_KEY: ${SENDGRID_API_KEY}
+            PORT: 3000
+            NODE_ENV: production
+            EMAIL: ${EMAIL}
+            URL: ${URL}
+        volumes:
+            - "tmp:/wearmerge/backend/tmp"
+            - "uploads:/wearmerge/backend/uploads"
+            - "downloads:/wearmerge/backend/downloads"
+    frontend:
+        build: ./frontend
+        restart: always
+        environment:
+            URL: ${URL}
+        ports:
+            - "80:80"
+volumes:
+    db:
+        external: true
+    uploads:
+        external: true
+    downloads:
+        external: true
+    tmp:
+        external: true

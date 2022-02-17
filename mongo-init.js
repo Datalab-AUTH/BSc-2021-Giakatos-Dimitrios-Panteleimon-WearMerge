@@ -1,0 +1,1 @@
+db.session.createIndex({ "createdAt": 1, "sessionId": 1, "expiredAt": 1 });
