@@ -21,7 +21,7 @@
       <v-spacer></v-spacer>
       <v-tab
         v-if="!$vuetify.breakpoint.xsOnly"
-        href="https://github.com/WearMerge/backend/issues"
+        href="https://github.com/Datalab-AUTH/BSc-2021-Giakatos-Dimitrios-Panteleimon-WearMerge/issues"
         text
         class="my-2"
         target="_blank"
@@ -41,7 +41,7 @@
             <v-btn text to="/about"> About </v-btn>
           </v-list-item-title>
           <v-list-item-title>
-            <v-btn text href="https://github.com/WearMerge/backend/issues">
+            <v-btn text href="https://github.com/Datalab-AUTH/BSc-2021-Giakatos-Dimitrios-Panteleimon-WearMerge/issues">
               Report Bugs
             </v-btn>
           </v-list-item-title>
@@ -71,7 +71,7 @@
           </v-col>
           <v-col align="end" xs="1">
             This is an <strong>open source</strong> project. Find us on
-            <a href="https://github.com/WearMerge/">&nbsp;&nbsp;<v-icon class="footer-icons-yellow">fa fa-github</v-icon></a>
+            <a href="https://github.com/Datalab-AUTH/BSc-2021-Giakatos-Dimitrios-Panteleimon-WearMerge">&nbsp;&nbsp;<v-icon class="footer-icons-yellow">fa fa-github</v-icon></a>
           </v-col>
         </v-row>
         <v-divider style="background: #032b44"></v-divider>
